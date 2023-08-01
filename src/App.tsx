@@ -3,6 +3,7 @@ import './App.css';
 import './styles/sb-admin-2.min.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import PrivateRoute from './Components/PrivateRoute';
+import AccountRoute from './Components/AccountRoute';
 import Login from './pages/Account/Login';
 import Admin from './pages/Admin/Admin';
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App" id='wrapper'>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<PrivateRoute><Admin /></PrivateRoute>}></Route>
+          <Route path='/admin' element={<PrivateRoute><Login /></PrivateRoute>}></Route>
+          <Route path='/login' element={<AccountRoute><Login /></AccountRoute>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
